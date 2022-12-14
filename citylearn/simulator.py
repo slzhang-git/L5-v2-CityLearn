@@ -87,3 +87,19 @@ class Simulator:
                             f' Actions: {actions},'\
                                 f' Rewards: {rewards}'
                 )
+                
+                
+        # visualize the learning results        
+        for ind in range(len(reward_record[0])):
+            temp_reward=[]
+            temp_reward_sum=[]
+            for reward_ind in range(len(reward_record)):
+                temp_reward.append(reward_record[reward_ind][ind])
+                temp_reward_sum.append(sum(temp_reward))
+            plot_label='the '+str(ind+1)+'-th building'
+            plt.plot(temp_reward_sum, label=plot_label)
+        plt.xlabel("iterations")
+        plt.ylabel("accumulated rewards")
+        plt.legend()
+        plt.show()
+        # visualize the learning results  
