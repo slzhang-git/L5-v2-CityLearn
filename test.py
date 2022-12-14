@@ -12,14 +12,15 @@ local_directory="citylearn/data/citylearn_challenge_2022_phase_1/schema.json"
 final_directory=os.path.join(current_directory, local_directory)
 schema = read_json(final_directory)
 schema['root_directory']=os.path.join(current_directory,"citylearn/data/citylearn_challenge_2022_phase_1/")
+# revised for file path editing
 
 RESULT_FILEPATH = 'simulation.pkl'
-#   schema = 'citylearn_challenge_2022_phase_1'
-#   schema = read_json('/Users/kingsleyenweye/Desktop/INTELLIGENT_ENVIRONMENT_LAB/citylearn/CityLearn/citylearn/data/citylearn_challenge_2022_phase_1/schema.json')
+#   schema = 'citylearn_challenge_2022_phase_1' # revised for file path editing
+#   schema = read_json('/Users/kingsleyenweye/Desktop/INTELLIGENT_ENVIRONMENT_LAB/citylearn/CityLearn/citylearn/data/citylearn_challenge_2022_phase_1/schema.json') # revised for file path editing
 # schema['episodes'] = 1
 # schema['simulation_end_time_step'] = 100
-schema['agent']['type'] = 'citylearn.agents.marlisa.MARLISA'
-#   schema['root_directory'] = '/Users/kingsleyenweye/Desktop/INTELLIGENT_ENVIRONMENT_LAB/citylearn/CityLearn/citylearn/data/citylearn_challenge_2022_phase_1/'
+schema['agent']['type'] = 'citylearn.agents.marlisa.MARLISA'    
+#   schema['root_directory'] = '/Users/kingsleyenweye/Desktop/INTELLIGENT_ENVIRONMENT_LAB/citylearn/CityLearn/citylearn/data/citylearn_challenge_2022_phase_1/' # revised for file path editing
 
 def main():
     # simulation
