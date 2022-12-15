@@ -1,5 +1,6 @@
 import logging
 from typing import List
+import matplotlib.pyplot as plt
 from citylearn.citylearn import CityLearnEnv
 from citylearn.agents.base import Agent
 
@@ -67,6 +68,7 @@ class Simulator:
         
         Runs central or multi agent simulation.
         """
+        reward_record=[]
 
         for episode in range(self.episodes):
             observations = self.citylearn_env.reset()
@@ -80,6 +82,8 @@ class Simulator:
                 # update
                 self.agent.add_to_buffer(observations, actions, rewards, next_observations, done=self.citylearn_env.done)
                 observations = [o for o in next_observations]
+                
+                reward_record.append(rewards)
 
                 logging.debug(
                     f'Time step: {self.citylearn_env.time_step}/{self.citylearn_env.time_steps - 1},'\
