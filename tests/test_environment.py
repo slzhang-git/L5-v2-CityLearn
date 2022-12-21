@@ -4,6 +4,7 @@ import sys
 sys.path.insert(0, '..')
 from citylearn.citylearn import CityLearnEnv
 from citylearn.simulator import Simulator
+import matplotlib.pyplot as plt
 
 RESULT_FILEPATH = 'test_environment.pkl'
 schema = 'citylearn_challenge_2020_climate_zone_1'
@@ -23,4 +24,8 @@ if __name__ == '__main__':
     start_time = time.time()
     main()
     runtime = time.time() - start_time
+    title="run time: "+str(runtime)+" s"
+    plt.title(title)
+    plt.savefig("rewards_over_the_time.png")
+    plt.show()
     print('runtime:',runtime)
