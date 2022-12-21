@@ -2,6 +2,7 @@ import logging
 from typing import List
 from citylearn.citylearn import CityLearnEnv
 from citylearn.agents.base import Agent
+import matplotlib.pyplot as plt
 
 logging.basicConfig(level=logging.DEBUG)
 logging.getLogger('matplotlib.font_manager').disabled = True
@@ -67,6 +68,7 @@ class Simulator:
         
         Runs central or multi agent simulation.
         """
+        reward_record = []
 
         for episode in range(self.episodes):
             observations = self.citylearn_env.reset()
@@ -80,6 +82,7 @@ class Simulator:
                 # update
                 self.agent.add_to_buffer(observations, actions, rewards, next_observations, done=self.citylearn_env.done)
                 observations = [o for o in next_observations]
+                reward_record.append(rewards)
 
                 logging.debug(
                     f'Time step: {self.citylearn_env.time_step}/{self.citylearn_env.time_steps - 1},'\
@@ -87,3 +90,16 @@ class Simulator:
                             f' Actions: {actions},'\
                                 f' Rewards: {rewards}'
                 )
+                
+        # visualize the learning results
+        for ind in range(len(reward_record[0])):
+            temp_reward=[]
+            temp_reward_sum=[]
+            for reward_ind in range(len(reward_record)):
+                temp_reward.append(reward_record[reward_ind][ind])
+                temp_reward_sum.append(sum(temp_reward))
+            plot_label='the '+str(ind+1)+'-th building'
+            plt.plot(temp_reward_sum, label=plot_label)
+        plt.xlabel("iterations")
+        plt.ylabel("accumulated rewards")
+        plt.legend()
