@@ -26,3 +26,5 @@ Refer to the [docs](https://intelligent-environments-lab.github.io/CityLearn/) f
 
 # How to run
 --The mainfunction file is "tests/test_environment.py", where the simulation will run and the result will be visualized
+
+--The folder "citylearn" includes algorithm scripts
