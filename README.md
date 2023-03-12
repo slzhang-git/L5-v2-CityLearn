@@ -23,3 +23,6 @@ Refer to the [docs](https://intelligent-environments-lab.github.io/CityLearn/) f
 - [CityLearn Challenge 2020](https://sites.google.com/view/citylearnchallenge/previous-edition-2020?authuser=0)
 - [CityLearn Challenge 2021](https://sites.google.com/view/citylearnchallenge/home?authuser=0)
 - [CityLearn Challenge 2022](https://www.aicrowd.com/challenges/neurips-2022-citylearn-challenge)
+
+# How to run
+--The mainfunction file is "tests/test_environment.py", where the simulation will run and the result will be visualized
