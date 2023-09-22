@@ -1,3 +1,15 @@
+# Environment and libraries
+I use MAC to run the code, and for those who are interested, I list the library versions relevant to this code on my PC:
+gym==0.26.2
+matplotlib==3.5.2
+numpy==1.24.0
+pandas==1.5.2
+scikit-learn==1.2.0
+simplejson==3.18.0
+torch==1.13.0
+torchvision==0.14.0
+Please contact me if any other library version you want to know.
+
 # CityLearn
 CityLearn is an open source OpenAI Gym environment for the implementation of Multi-Agent Reinforcement Learning (RL) for building energy coordination and demand response in cities. Its objective is to facilitate and standardize the evaluation of RL agents such that different algorithms can be easily compared with each other.
 
